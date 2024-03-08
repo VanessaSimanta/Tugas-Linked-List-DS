@@ -45,7 +45,7 @@ class no5 {
     }
   
     public static void main(String[] args) {
-    //memasukan data ke linked list 1 dan 2
+    //memasukan data ke first dan second linked list
     Node first = new Node(1);
         first.next = new Node(2);
   
