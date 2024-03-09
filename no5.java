@@ -58,9 +58,11 @@ class no5 {
     Node third = Merge(first, second);
         
         //print out hasil dari linked list yang baru
+        System.out.println("[ ");
         while(third != null) {
             System.out.print(third.info + " ");
             third = third.next;
         }
+        System.out.println(" ]");
     }
   }
