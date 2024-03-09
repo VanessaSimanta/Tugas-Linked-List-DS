@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Node {
     int info;
     Node next;
@@ -10,6 +12,26 @@ class Node {
 }
 
 class no5 {
+    Node tail = null;
+    Node head = null;
+
+    //function untuk insert data ke linked list
+    public void insert(int data) {
+        //buat node baru
+		Node newNode = new Node(data);
+        //jika list kosong, head dan tail sama-sama menunjuk ke node pertama
+		if (head == null) {
+			head = newNode;
+			tail = newNode;
+		}
+        //jika tidak kosong, tail diupdate untuk menunjuk ke node baru
+		else {
+			tail.next = newNode;
+			tail = newNode;
+		}
+	}
+
+    //function untuk menggabungkan kedua linked list
     public static Node Merge (Node first, Node second) {
     //deklarasi head dan tail
     Node tail = null;
@@ -45,17 +67,31 @@ class no5 {
     }
   
     public static void main(String[] args) {
-    //memasukan data ke first dan second linked list
-    Node first = new Node(1);
-        first.next = new Node(2);
-  
-    Node second = new Node(4);
-        second.next = new Node(5);
-        second.next.next = new Node(5);
-        second.next.next.next = new Node(5);
-    
+        //input
+        Scanner scanner = new Scanner(System.in);
+
+        no5 first = new no5();
+
+        System.out.println("Masukkan data untuk first linked list (Ketik -1 untuk berhenti menginput):");
+
+        //memasukkan data ke linked list
+        int data;
+        while ((data = scanner.nextInt()) != -1) {
+            first.insert(data);
+        }
+
+        no5 second = new no5();
+
+        System.out.println("Masukkan data untuk second linked list (Ketik -1 untuk berhenti):");
+
+        int data1;
+        while ((data1 = scanner.nextInt()) != -1) {
+            second.insert(data1);
+        }
+        scanner.close();
+        
     //memanggil function merge
-    Node third = Merge(first, second);
+    Node third = Merge(first.head, second.head);
         
         //print out hasil dari linked list yang baru
         System.out.println("[ ");
