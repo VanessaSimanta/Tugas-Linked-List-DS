@@ -94,11 +94,11 @@ class no5 {
     Node third = Merge(first.head, second.head);
         
         //print out hasil dari linked list yang baru
-        System.out.println("[ ");
+        System.out.println("[");
         while(third != null) {
             System.out.print(third.info + " ");
             third = third.next;
         }
-        System.out.println(" ]");
+        System.out.println("]");
     }
   }
