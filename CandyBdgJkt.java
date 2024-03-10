@@ -5,8 +5,7 @@ public class CandyBdgJkt {
         int[] JktArray = new int[25];
         int[] BdgArray = new int[25];
         int[] intersection = new int[25];
-        int JktCount= 0;
-        int BdgCount= 0;
+        int intersectionCount= 0;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -31,8 +30,9 @@ public class CandyBdgJkt {
         //     break;
         // }
         }
+        
         scanner.close();
-        int intersectionCount= 0;
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 if (JktArray[i] == BdgArray[j]) {
@@ -47,5 +47,14 @@ public class CandyBdgJkt {
         for (int i = 0; i < intersectionCount; i++) {
             System.out.println(intersection[i]+ " ");
         }
+
+        // atau bisa juga
+        // for (int i = 0; i < 3; i++) {
+        //     for (int j = 0; j < 3; j++) {
+        //         if (JktArray[i] == BdgArray[j]) {
+        //             System.out.println("intersection kode produksi candy pada kedua gudang adalah :" + JktArray[i]);
+        //         }   
+        //     }
+        // }
     }
-}
+}            
